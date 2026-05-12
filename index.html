@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="地元農家直送の新鮮な野菜・果物。毎朝市場から仕入れた旬の食材。AgriTechSuppoter。">
+  <meta name="theme-color" content="#2D5016">
+  <title>AgriTechSuppoter｜朝採れ野菜・果物の八百屋</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:        '#FAF7F2',
+            'deep-green': '#2D5016',
+            'mid-green':  '#4A7C28',
+            'lite-green': '#8BAF5A',
+            wood:         '#8B6548',
+            'wood-lt':    '#D4A574',
+            'acc-red':    '#C0392B',
+            'acc-orange': '#E67E22',
+          },
+          fontFamily: {
+            serif: ['"Noto Serif JP"', 'serif'],
+            sans:  ['"Noto Sans JP"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream font-sans overflow-x-hidden text-gray-800">
+
+  <!-- ================================================
+       HERO
+  ================================================ -->
+  <section id="hero" class="relative h-screen overflow-hidden">
+
+    <!-- BG image + overlay -->
+    <div class="hero-bg absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1757627550652-30788bfce978?auto=format&fit=crop&w=1600&q=95"
+        alt="新鮮な朝市の野菜"
+        class="hero-img w-full h-full object-cover"
+        loading="eager"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-5 py-4">
+      <div class="text-white">
+        <p class="font-sans text-[10px] tracking-[0.2em] opacity-70 uppercase">Local Greengrocer</p>
+        <h1 class="font-sans text-lg font-bold tracking-widest leading-tight">AgriTechSuppoter</h1>
+      </div>
+      <button id="menuBtn" class="w-11 h-11 flex flex-col justify-center items-center gap-[5px] rounded-full bg-white/10 backdrop-blur-sm" aria-label="メニュー">
+        <span class="w-5 h-[1.5px] bg-white rounded-full"></span>
+        <span class="w-5 h-[1.5px] bg-white rounded-full"></span>
+        <span class="w-3.5 h-[1.5px] bg-white rounded-full self-start ml-[5px]"></span>
+      </button>
+    </header>
+
+    <!-- Hero copy -->
+    <div class="absolute bottom-0 left-0 right-0 px-6 pb-20 text-white hero-content">
+      <span class="inline-flex items-center gap-1.5 bg-acc-orange/90 text-white text-[11px] px-3 py-1.5 rounded-full font-sans tracking-wider mb-5">
+        <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+        毎朝 市場直送
+      </span>
+      <h2 class="font-serif text-[2.55rem] font-bold leading-[1.25] mb-3 drop-shadow-lg">
+        今日も、<br>旬を<br>食べよう。
+      </h2>
+      <p class="font-sans text-sm opacity-80 leading-relaxed mb-7">
+        地元農家から届いた<br>朝採れの野菜・果物が並んでいます。
+      </p>
+      <a href="#recommend" class="inline-flex items-center gap-2 bg-white text-deep-green font-sans font-bold text-[15px] px-6 py-3.5 rounded-full shadow-xl tap-btn">
+        本日のおすすめを見る
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+      <div class="scroll-track">
+        <div class="scroll-thumb"></div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       TODAY'S RECOMMEND
+  ================================================ -->
+  <section id="recommend" class="pt-14 pb-10 px-5 bg-cream">
+
+    <div class="mb-8 fade-up">
+      <span class="label-tag">Today's Pick</span>
+      <h2 class="section-title">本日のおすすめ</h2>
+      <div class="section-accent"></div>
+      <p class="section-sub">今朝 仕入れたばかりの旬の野菜・果物</p>
+    </div>
+
+    <div class="space-y-5">
+
+      <!-- Card: トマト -->
+      <article class="product-card bg-white rounded-3xl overflow-hidden shadow-sm fade-up" style="transition-delay:.05s">
+        <div class="relative h-52">
+          <img
+            src="https://images.unsplash.com/photo-1553395572-0ef353a212bf?auto=format&fit=crop&w=1200&q=92"
+            alt="完熟トマト" class="w-full h-full object-cover" loading="lazy"
+          >
+          <span class="badge bg-acc-red">旬</span>
+          <div class="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-baseline justify-between">
+            <h3 class="prod-name">完熟トマト</h3>
+            <p class="price">¥298</p>
+          </div>
+          <p class="prod-meta">長野県産 · 1袋（5個入り）</p>
+          <div class="prod-divider"></div>
+          <p class="prod-desc">朝露を含んだ真っ赤なトマト。糖度が高く、生でもジュースにしても絶品です。</p>
+        </div>
+      </article>
+
+      <!-- Card: きゅうり -->
+      <article class="product-card bg-white rounded-3xl overflow-hidden shadow-sm fade-up" style="transition-delay:.1s">
+        <div class="relative h-52">
+          <img
+            src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?auto=format&fit=crop&w=1200&q=92"
+            alt="きゅうり" class="w-full h-full object-cover" loading="lazy"
+          >
+          <span class="badge bg-mid-green">新入荷</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-baseline justify-between">
+            <h3 class="prod-name">採れたてきゅうり</h3>
+            <p class="price">¥150</p>
+          </div>
+          <p class="prod-meta">地元農家直送 · 3本</p>
+          <div class="prod-divider"></div>
+          <p class="prod-desc">今朝6時に収穫したパリパリのきゅうり。みずみずしさが違います。</p>
+        </div>
+      </article>
+
+      <!-- Card: 桃 -->
+      <article class="product-card bg-white rounded-3xl overflow-hidden shadow-sm fade-up" style="transition-delay:.15s">
+        <div class="relative h-52">
+          <img
+            src="https://images.unsplash.com/photo-1517355352485-3c18847c2f7d?auto=format&fit=crop&w=1200&q=92"
+            alt="白桃" class="w-full h-full object-cover" loading="lazy"
+          >
+          <span class="badge bg-acc-orange">特売</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-baseline justify-between">
+            <h3 class="prod-name">完熟白桃</h3>
+            <p class="price">¥480<span class="price-was">¥580</span></p>
+          </div>
+          <p class="prod-meta">山梨県産 · 1個</p>
+          <div class="prod-divider"></div>
+          <p class="prod-desc">甘い香りが広がる旬の桃。ジューシーで口いっぱいに広がる甘さです。</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       POPULAR (horizontal scroll)
+  ================================================ -->
+  <section id="popular" class="pt-14 pb-2 bg-white">
+
+    <div class="px-5 mb-5 fade-up">
+      <span class="label-tag">Popular</span>
+      <h2 class="section-title">人気商品</h2>
+      <div class="section-accent"></div>
+    </div>
+
+    <div class="h-scroll flex gap-4 px-5 pb-6">
+
+      <div class="pop-card fade-up" style="transition-delay:.0s">
+        <div class="pop-img-wrap">
+          <img src="https://images.unsplash.com/photo-1595587870672-c79b47875c6a?auto=format&fit=crop&w=800&q=90" alt="野菜セット" loading="lazy">
+        </div>
+        <p class="origin-tag mt-2">埼玉県産</p>
+        <h4 class="pop-name">旬の野菜セット</h4>
+        <p class="price text-sm mt-0.5">¥680</p>
+      </div>
+
+      <div class="pop-card fade-up" style="transition-delay:.05s">
+        <div class="pop-img-wrap">
+          <img src="https://images.unsplash.com/photo-1676069096057-b95d34cb27d8?auto=format&fit=crop&w=800&q=90" alt="根菜" loading="lazy">
+        </div>
+        <p class="origin-tag mt-2">地元農家</p>
+        <h4 class="pop-name">根菜ミックス</h4>
+        <p class="price text-sm mt-0.5">¥450</p>
+      </div>
+
+      <div class="pop-card fade-up" style="transition-delay:.1s">
+        <div class="pop-img-wrap">
+          <img src="https://images.unsplash.com/photo-1522687297221-2d71f8c50fd5?auto=format&fit=crop&w=800&q=90" alt="アボカド" loading="lazy">
+        </div>
+        <p class="origin-tag mt-2">メキシコ産</p>
+        <h4 class="pop-name">完熟アボカド</h4>
+        <p class="price text-sm mt-0.5">¥198</p>
+      </div>
+
+      <div class="pop-card fade-up" style="transition-delay:.15s">
+        <div class="pop-img-wrap">
+          <img src="https://images.unsplash.com/photo-1622143486012-d784ef5d88c4?auto=format&fit=crop&w=800&q=90" alt="いちご" loading="lazy">
+        </div>
+        <p class="origin-tag mt-2">栃木県産</p>
+        <h4 class="pop-name">あまおう</h4>
+        <p class="price text-sm mt-0.5">¥580</p>
+      </div>
+
+      <div class="pop-card fade-up" style="transition-delay:.2s">
+        <div class="pop-img-wrap">
+          <img src="https://images.unsplash.com/photo-1561155713-50f2a38fde2c?auto=format&fit=crop&w=800&q=90" alt="葉物野菜" loading="lazy">
+        </div>
+        <p class="origin-tag mt-2">神奈川県産</p>
+        <h4 class="pop-name">葉物野菜セット</h4>
+        <p class="price text-sm mt-0.5">¥380</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       PRODUCER'S STORY
+  ================================================ -->
+  <section id="story" class="pt-14 pb-12 px-5 bg-cream">
+
+    <div class="fade-up mb-8">
+      <span class="label-tag">Our Story</span>
+      <h2 class="section-title">生産者のこだわり</h2>
+      <div class="section-accent"></div>
+    </div>
+
+    <div class="space-y-7">
+
+      <div class="flex gap-4 items-start fade-up" style="transition-delay:.05s">
+        <div class="story-thumb">
+          <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?auto=format&fit=crop&w=400&q=88" alt="市場" loading="lazy">
+        </div>
+        <div class="flex-1 pt-1">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-xl">🌱</span>
+            <h3 class="font-serif font-bold text-gray-800 text-[15px]">朝採れにこだわる</h3>
+          </div>
+          <p class="text-gray-500 text-[13px] font-sans leading-relaxed">毎朝5時から市場へ。その日の一番鮮度の高い野菜だけを厳選して仕入れています。</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-start fade-up" style="transition-delay:.1s">
+        <div class="story-thumb">
+          <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=400&q=88" alt="農場" loading="lazy">
+        </div>
+        <div class="flex-1 pt-1">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-xl">🏡</span>
+            <h3 class="font-serif font-bold text-gray-800 text-[15px]">地元農家と直接契約</h3>
+          </div>
+          <p class="text-gray-500 text-[13px] font-sans leading-relaxed">近隣の農家さんと顔の見える関係で。農薬・肥料の使い方まで確認した安心野菜です。</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-start fade-up" style="transition-delay:.15s">
+        <div class="story-thumb">
+          <img src="https://images.unsplash.com/photo-1595587870672-c79b47875c6a?auto=format&fit=crop&w=400&q=88" alt="食卓" loading="lazy">
+        </div>
+        <div class="flex-1 pt-1">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-xl">🍽️</span>
+            <h3 class="font-serif font-bold text-gray-800 text-[15px]">食卓に笑顔を届ける</h3>
+          </div>
+          <p class="text-gray-500 text-[13px] font-sans leading-relaxed">30年間、地域の皆様の食卓を支えてきました。美味しい野菜でご家族を笑顔に。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 区切り -->
+    <div class="flex items-center gap-3 mt-10 fade-up">
+      <div class="flex-1 h-px bg-wood-lt/40"></div>
+      <span class="text-wood-lt text-lg">🌿</span>
+      <div class="flex-1 h-px bg-wood-lt/40"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       RECIPE
+  ================================================ -->
+  <section id="recipe" class="pt-14 pb-12 bg-white">
+
+    <div class="px-5 mb-6 fade-up">
+      <span class="label-tag">Recipe</span>
+      <h2 class="section-title">旬のレシピ</h2>
+      <div class="section-accent"></div>
+      <p class="section-sub">今の旬で作れる簡単レシピ</p>
+    </div>
+
+    <div class="px-5 space-y-4">
+
+      <div class="recipe-card fade-up" style="transition-delay:.05s">
+        <div class="recipe-thumb">
+          <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?auto=format&fit=crop&w=600&q=90" alt="カプレーゼ" loading="lazy">
+        </div>
+        <div class="p-4 flex-1">
+          <span class="time-tag">10分</span>
+          <h4 class="recipe-title">トマトとバジルのカプレーゼ</h4>
+          <p class="recipe-desc">完熟トマトの甘みとモッツァレラの相性抜群</p>
+        </div>
+      </div>
+
+      <div class="recipe-card fade-up" style="transition-delay:.1s">
+        <div class="recipe-thumb">
+          <img src="https://images.unsplash.com/photo-1559561723-c3f4195835db?auto=format&fit=crop&w=600&q=90" alt="ミネストローネ" loading="lazy">
+        </div>
+        <div class="p-4 flex-1">
+          <span class="time-tag">20分</span>
+          <h4 class="recipe-title">夏野菜のミネストローネ</h4>
+          <p class="recipe-desc">旬の野菜をたっぷり使ったヘルシースープ</p>
+        </div>
+      </div>
+
+      <div class="recipe-card fade-up" style="transition-delay:.15s">
+        <div class="recipe-thumb">
+          <img src="https://images.unsplash.com/photo-1662611284583-f34180194370?auto=format&fit=crop&w=600&q=90" alt="和え物" loading="lazy">
+        </div>
+        <div class="p-4 flex-1">
+          <span class="time-tag">15分</span>
+          <h4 class="recipe-title">きゅうりとツナの和え物</h4>
+          <p class="recipe-desc">パリパリのきゅうりが決め手の簡単副菜</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       REVIEWS
+  ================================================ -->
+  <section id="reviews" class="pt-14 pb-14 px-5 bg-deep-green text-white">
+
+    <div class="mb-8 fade-up">
+      <span class="label-tag-light">Voice</span>
+      <h2 class="font-serif text-[1.85rem] font-light mt-2.5 leading-snug tracking-wide text-white">お客様の声</h2>
+      <div class="section-accent-light"></div>
+    </div>
+
+    <div class="space-y-4">
+
+      <div class="review-card fade-up" style="transition-delay:.05s">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="avatar bg-wood-lt">田</div>
+          <div>
+            <p class="font-sans font-bold text-sm">田中さん（60代・主婦）</p>
+            <p class="text-yellow-400 text-xs tracking-tight">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-white/75 text-[13px] font-sans leading-relaxed">「スーパーの野菜と全然違う！みずみずしくて、子供もおかわりするようになりました。毎週来るのが楽しみです。」</p>
+      </div>
+
+      <div class="review-card fade-up" style="transition-delay:.1s">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="avatar bg-mid-green">佐</div>
+          <div>
+            <p class="font-sans font-bold text-sm">佐藤さん（40代・会社員）</p>
+            <p class="text-yellow-400 text-xs tracking-tight">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-white/75 text-[13px] font-sans leading-relaxed">「店主さんが旬の食べ方をいつも教えてくれます。近所にこんなお店があって本当に嬉しい。」</p>
+      </div>
+
+      <div class="review-card fade-up" style="transition-delay:.15s">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="avatar bg-acc-red">鈴</div>
+          <div>
+            <p class="font-sans font-bold text-sm">鈴木さん（70代）</p>
+            <p class="text-yellow-400 text-xs tracking-tight">★★★★☆</p>
+          </div>
+        </div>
+        <p class="text-white/75 text-[13px] font-sans leading-relaxed">「値段も手頃で、何より新鮮。昔ながらの八百屋さんの雰囲気が好きです。長く続けてほしい。」</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       STORE INFO
+  ================================================ -->
+  <section id="store" class="pt-14 pb-12 px-5 bg-cream">
+
+    <div class="mb-8 fade-up">
+      <span class="label-tag">Store Info</span>
+      <h2 class="section-title">店舗情報</h2>
+      <div class="section-accent"></div>
+    </div>
+
+    <!-- Map placeholder -->
+    <div class="map-block fade-up mb-5">
+      <span class="text-5xl">📍</span>
+      <p class="font-sans text-gray-400 text-sm mt-2">Google マップはこちら</p>
+    </div>
+
+    <!-- Details card -->
+    <div class="bg-white rounded-3xl px-5 py-5 space-y-5 shadow-sm mb-5 fade-up">
+
+      <div class="info-row">
+        <span class="info-icon">🏪</span>
+        <div>
+          <p class="info-label">店名</p>
+          <p class="info-val font-sans font-bold">AgriTechSuppoter</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="info-row">
+        <span class="info-icon">📍</span>
+        <div>
+          <p class="info-label">住所</p>
+          <p class="info-val">〒XXX-XXXX<br>東京都○○区○○町1-2-3</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="info-row">
+        <span class="info-icon">🕐</span>
+        <div>
+          <p class="info-label">営業時間</p>
+          <p class="info-val">月〜土　8:00 〜 19:00</p>
+          <p class="info-val">日・祝　8:00 〜 17:00</p>
+          <p class="text-acc-red text-xs font-sans mt-1">年中無休（年末年始を除く）</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="info-row">
+        <span class="info-icon">🚃</span>
+        <div>
+          <p class="info-label">アクセス</p>
+          <p class="info-val">○○駅 徒歩3分</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="flex flex-col gap-3 fade-up">
+      <a href="tel:03-XXXX-XXXX" class="cta-primary tap-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        電話で注文する
+      </a>
+      <a href="#" class="cta-secondary tap-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        地図を開く
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+  ================================================ -->
+  <footer class="bg-gray-900 text-white pt-10 pb-8 px-5">
+    <div class="text-center mb-7">
+      <p class="font-sans text-lg font-bold mb-1 tracking-widest">AgriTechSuppoter</p>
+      <p class="text-gray-500 text-xs font-sans tracking-widest">地域に根ざした八百屋</p>
+    </div>
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 mb-8">
+      <a href="#recommend" class="footer-link">おすすめ</a>
+      <a href="#popular"   class="footer-link">人気商品</a>
+      <a href="#story"     class="footer-link">こだわり</a>
+      <a href="#recipe"    class="footer-link">レシピ</a>
+      <a href="#store"     class="footer-link">店舗情報</a>
+    </nav>
+    <div class="border-t border-gray-800 pt-6 text-center space-y-1">
+      <p class="text-gray-500 text-xs font-sans">© 2025 AgriTechSuppoter. All Rights Reserved.</p>
+      <p class="text-gray-700 text-[11px] font-sans">プライバシーポリシー｜特定商取引法に基づく表記</p>
+    </div>
+  </footer>
+
+
+  <!-- ================================================
+       FLOATING PHONE BTN
+  ================================================ -->
+  <div class="fixed bottom-6 right-5 z-40">
+    <a href="tel:03-XXXX-XXXX" class="float-phone tap-btn" aria-label="電話する">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <!-- ================================================
+       MOBILE NAV OVERLAY
+  ================================================ -->
+  <div id="mobileNav" class="fixed inset-0 bg-deep-green/97 z-50 flex flex-col items-center justify-center gap-9 pointer-events-none opacity-0 transition-opacity duration-300">
+    <button id="closeNav" class="absolute top-5 right-5 w-11 h-11 flex items-center justify-center rounded-full bg-white/10 text-white text-xl" aria-label="閉じる">✕</button>
+    <nav class="flex flex-col items-center gap-8">
+      <a href="#recommend" class="nav-link font-serif text-2xl text-white/90">本日のおすすめ</a>
+      <a href="#popular"   class="nav-link font-serif text-2xl text-white/90">人気商品</a>
+      <a href="#story"     class="nav-link font-serif text-2xl text-white/90">こだわり</a>
+      <a href="#recipe"    class="nav-link font-serif text-2xl text-white/90">レシピ</a>
+      <a href="#reviews"   class="nav-link font-serif text-2xl text-white/90">お客様の声</a>
+      <a href="#store"     class="nav-link font-serif text-2xl text-white/90">店舗情報</a>
+    </nav>
+    <a href="tel:03-XXXX-XXXX" class="mt-4 flex items-center gap-2 bg-acc-orange text-white font-sans font-bold text-base px-8 py-3.5 rounded-full">
+      📞　電話する
+    </a>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

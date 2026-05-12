@@ -1,0 +1,517 @@
+/* ============================================================
+   やおや みどり — Custom Styles
+   Colors: cream #FAF7F2 / deep-green #2D5016 / mid-green #4A7C28
+           acc-orange #E67E22 / acc-red #C0392B / wood-lt #D4A574
+============================================================ */
+
+/* ── Reset / Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Hero ── */
+.hero-img {
+  transform: scale(1.08);
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+
+/* Scroll indicator */
+.scroll-track {
+  width: 2px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.scroll-thumb {
+  width: 100%;
+  height: 45%;
+  background: #fff;
+  border-radius: 2px;
+  animation: scrollDown 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(230%); opacity: 0; }
+}
+
+/* ── Fade-up animation ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Tap feedback ── */
+.tap-btn {
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.tap-btn:active {
+  transform: scale(0.96);
+  opacity: 0.88;
+}
+
+/* ── Section typography ── */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  color: #8B6548;
+  text-transform: uppercase;
+}
+
+.label-tag::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.label-tag-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+.label-tag-light::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-top: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.section-accent {
+  width: 28px;
+  height: 2px;
+  background: #2D5016;
+  margin-top: 14px;
+  border-radius: 1px;
+}
+
+.section-accent-light {
+  width: 28px;
+  height: 2px;
+  background: rgba(255,255,255,0.4);
+  margin-top: 14px;
+  border-radius: 1px;
+}
+
+.section-sub {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-top: 12px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Product card ── */
+.product-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.product-card:active {
+  transform: scale(0.985);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+.origin-tag {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* ── Product card info ── */
+.prod-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+
+.prod-meta {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  color: #b8b8b8;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+}
+
+.prod-divider {
+  height: 1px;
+  background: #f2f2f2;
+  margin: 14px 0 12px;
+}
+
+.price {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #E67E22;
+  letter-spacing: 0.02em;
+}
+
+.price-was {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #ccc;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+.unit {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.prod-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12.5px;
+  color: #888;
+  line-height: 1.75;
+}
+
+/* ── Horizontal scroll ── */
+.h-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Popular cards ── */
+.pop-card {
+  flex-shrink: 0;
+  width: 168px;
+}
+
+.pop-img-wrap {
+  width: 168px;
+  height: 168px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pop-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pop-card:active .pop-img-wrap img {
+  transform: scale(1.04);
+}
+
+.pop-name {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ── Story thumbnail ── */
+.story-thumb {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.story-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Recipe card ── */
+.recipe-card {
+  display: flex;
+  background: #FAF7F2;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.recipe-thumb {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+}
+
+.recipe-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.time-tag {
+  display: inline-block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  color: #4A7C28;
+  background: rgba(74, 124, 40, 0.12);
+  padding: 2px 10px;
+  border-radius: 9999px;
+}
+
+.recipe-title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 14px;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.recipe-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ── Review card ── */
+.review-card {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ── Store info ── */
+.map-block {
+  height: 180px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.info-icon {
+  font-size: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.info-val {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin-left: 34px;
+}
+
+/* ── CTA buttons ── */
+.cta-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #2D5016;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(45, 80, 22, 0.3);
+  min-height: 56px;
+  text-decoration: none;
+}
+
+.cta-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  color: #2D5016;
+  border: 2px solid #2D5016;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px;
+  border-radius: 18px;
+  min-height: 56px;
+  text-decoration: none;
+}
+
+/* ── Floating phone button ── */
+.float-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #E67E22;
+  border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(230, 126, 34, 0.45);
+  animation: phonePulse 2.2s ease-in-out infinite;
+  text-decoration: none;
+}
+
+@keyframes phonePulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(230, 126, 34, 0.4); }
+  50%       { box-shadow: 0 6px 32px rgba(230, 126, 34, 0.0), 0 0 0 14px rgba(230, 126, 34, 0.0); }
+}
+
+/* ── Footer links ── */
+.footer-link {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+/* ── Mobile nav ── */
+#mobileNav.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #E67E22;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:active::after {
+  width: 100%;
+}
+
+/* ── Responsive cap at 480px (portrait) ── */
+@media (min-width: 481px) {
+  body {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12);
+    min-height: 100vh;
+  }
+}
